@@ -30,11 +30,13 @@ public class Bird : MonoBehaviour
     void Start()
     {
         //UI
-        scoreText = GameObject.Find("Canvas").transform.Find("ScoreImage").transform.Find("ScoreText").GetComponent<TextMeshProUGUI>();
+        scoreText = GameObject.Find("Canvas").transform.Find("ScoreText")
+            .GetComponent<TextMeshProUGUI>();
         scoreText.text = "" + scoreCounter;
 
         //Connection to Game Controller 
-        gameScript = GameObject.Find("GameController").GetComponent<GameScript>();
+        gameScript = GameObject.
+            Find("GameController").GetComponent<GameScript>();
 
         //Controlls how bird behaves 
         boxCollider2D = GetComponent<BoxCollider2D>();
@@ -42,7 +44,8 @@ public class Bird : MonoBehaviour
         rigidbody2D.gravityScale = 0;
 
         //Controls sprite 
-        spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        spriteRenderer = transform.GetChild(0)
+            .GetComponent<SpriteRenderer>();
 
         //Sets animation on and off
         animator = GetComponent<Animator>();
@@ -86,7 +89,7 @@ public class Bird : MonoBehaviour
             //Play the death SFX 
             dieSFX.Play();
             //Change the State of the game 
-            gameScript.FromPlayToLoes(scoreCounter);
+            gameScript.FromPlayToLose(scoreCounter);
         }
     }
 

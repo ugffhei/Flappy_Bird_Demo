@@ -222,8 +222,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3649024991007687606}
   - component: {fileID: 3649024991007687600}
-  - component: {fileID: 3649024991007687605}
   - component: {fileID: 3264058998436373186}
+  - component: {fileID: 3649024991007687605}
   - component: {fileID: 264447438860565421}
   m_Layer: 0
   m_Name: FlappyBird
@@ -271,20 +271,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 1
---- !u!114 &3649024991007687605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3649024991007687601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39c1699e7465eea43a8031ec9b99d31e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathSprite: {fileID: 859910468, guid: 70097bd88cfc43e4799dd6f087bf0e1c, type: 3}
-  forceScale: 3
 --- !u!61 &3264058998436373186
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -311,6 +297,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6482357, y: 0.48617506}
   m_EdgeRadius: 0
+--- !u!114 &3649024991007687605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3649024991007687601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c1699e7465eea43a8031ec9b99d31e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceScale: 3
+  deathSprite: {fileID: 859910468, guid: 70097bd88cfc43e4799dd6f087bf0e1c, type: 3}
 --- !u!95 &264447438860565421
 Animator:
   serializedVersion: 4

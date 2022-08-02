@@ -46,11 +46,12 @@ public class GameScript : MonoBehaviour
     {
         //Gameplay Controllers 
         bird = GameObject.Find("FlappyBird").GetComponent<Bird>();
-        pipeSpawner = GameObject.Find("PipeSpawner").GetComponent<PipeSpawner>();
+        pipeSpawner = GameObject.
+            Find("PipeSpawner").GetComponent<PipeSpawner>();
         data = GameObject.Find("Data").GetComponent<Data>();
 
         //UI Controllers
-        scoreImage = GameObject.Find("Canvas").transform.Find("ScoreImage").gameObject;
+        scoreImage = GameObject.Find("Canvas").transform.Find("ScoreText").gameObject;
         scoreImage.SetActive(true);
 
         clickToPlayText = GameObject.Find("Canvas").transform.Find("ClickToPlay").gameObject;
@@ -64,7 +65,9 @@ public class GameScript : MonoBehaviour
 
         //Text 
         score = GameObject.Find("Canvas").transform.Find("LoseMenu").transform.Find("Score").GetComponent<TextMeshProUGUI>();
-        best = GameObject.Find("Canvas").transform.Find("LoseMenu").transform.Find("Best").GetComponent<TextMeshProUGUI>();
+        best = GameObject.Find("Canvas").
+            transform.Find("LoseMenu").transform
+            .Find("Best").GetComponent<TextMeshProUGUI>();
 
         //Auido
         button = GameObject.Find("ButtonSFX").GetComponent<AudioSource>();
@@ -122,7 +125,7 @@ public class GameScript : MonoBehaviour
     //Turns off the number on top of the screen and turns on
     //The Game Over UI
     //Set the State to be Lost Menu
-    public void FromPlayToLoes(int counter)
+    public void FromPlayToLose(int counter)
     {
         //Checks if the new score is a high score 
         if (data.GetScore() < counter)
@@ -131,11 +134,11 @@ public class GameScript : MonoBehaviour
         }
 
         //Changes medal sprite based on how high the score is
-        if(counter > 10)
+        if(counter >= 10 && counter < 20)
         {
             medal.sprite = silver;
         }
-        else if(counter > 20)
+        else if(counter >= 20)
         {
             medal.sprite = gold;
         }
@@ -151,6 +154,7 @@ public class GameScript : MonoBehaviour
         //Moves to a diffrent state 
         _currentGame = GameState.LostMenu;
     }
+
 
     //============== Buttons 
 

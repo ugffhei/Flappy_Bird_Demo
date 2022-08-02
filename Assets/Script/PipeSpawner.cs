@@ -29,7 +29,9 @@ public class PipeSpawner : MonoBehaviour
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)
         {
-            Vector3 pos = new Vector3((float) spawnPoints[0].position.x, Random.Range((float) spawnPoints[0].position.y, (float) spawnPoints[1].position.y), 0);
+            Vector3 pos = new Vector3((float) spawnPoints[0].position.x,
+                Random.Range((float) spawnPoints[0].position.y, 
+                (float) spawnPoints[1].position.y), 0);
             var var = Instantiate(pipeSet, pos, Quaternion.identity);
             var.transform.SetParent(pipeCollector.transform);
             //Reset the timer 
